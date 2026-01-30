@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "MOBİL YÜRÜME ROBOTU Projesi",
+      "summary": "QTR Teknoloji A.Ş ile geliştirilen yenilikçi yürüme rehabilitasyon robotu.",
+      "content": "MOBİL YÜRÜME ROBOTU-MYR, yenilikçi bir yürüme rehabilitasyon robotudur. Hem sabit zeminde hem hareketli platformlarda hem de gerçek zemin koşullarında kullanılabilen mobil yapısıyla klinik içi ve dış ortamda etkin kullanım sağlar.",
+      "date": "2025-01-01",
+      "category": "Teknoloji",
+      "status": "Devam Ediyor",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "EduBritish Enstitüsü",
+      "summary": "MEB iş birliğiyle yurt dışı eğitim danışmanlık merkezi.",
+      "content": "TARGEV Edubritish Enstitüsü, yurt dışında yükseköğrenim görmek isteyen öğrencilere kapsamlı rehberlik ve danışmanlık hizmetleri sunan özel bir eğitim destek merkezidir. Millî Eğitim Bakanlığı ile imzalanan protokol çerçevesinde faaliyet göstermektedir.",
+      "date": "2024-06-15",
+      "category": "Eğitim",
+      "status": "Aktif",
+      "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Dijital Okuryazarlık Programı",
+      "summary": "10.000 öğrenciye dijital beceriler kazandırma projesi.",
+      "content": "MEB iş birliğiyle yürütülen bu program kapsamında, Türkiye genelinde 10.000 öğrenciye dijital okuryazarlık becerileri kazandırılmaktadır.",
+      "date": "2024-09-01",
+      "category": "Eğitim",
+      "status": "Tamamlandı",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
+      "featured": false
+    }
+  ]
+}
