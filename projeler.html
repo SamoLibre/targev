@@ -63,19 +63,72 @@
                 <button class="filter-btn">MEB İş Birliği</button>
             </div>
 
-            <!-- Project 1 -->
-            <div class="project-detail-card">
-                <div class="project-detail-content">
-                    <div class="project-detail-image">📚</div>
-                    <div class="project-detail-info">
-                        <span class="project-tag">MEB İş Birliği</span>
-                        <h3>Dijital Okuryazarlık Programı</h3>
-                        <p>Milli Eğitim Bakanlığı ile ortaklaşa yürütülen bu proje kapsamında, Türkiye genelindeki okullarda 10.000'den fazla öğrenciye dijital okuryazarlık eğitimi verilmiştir. Program, öğrencilerin bilgi ve iletişim teknolojilerini etkin kullanma becerilerini geliştirmeyi hedeflemektedir.</p>
-                        <p>Proje kapsamında uzman eğitmenler tarafından hazırlanan müfredat, internet güvenliği, dijital içerik üretimi, kodlama temelleri ve sosyal medya bilinçlendirmesi konularını kapsamaktadır.</p>
-                        <div class="project-meta">
-                            <div class="project-meta-item">
-                                <span>Durum</span>
-                                <span>Devam Ediyor</span>
+            <!-- Projects Container -->
+            <div id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>TARGEV</h3>
+                    <p>Eğitim ve araştırma alanında sürdürülebilir projeler geliştiren, gençlerimizin geleceğine yatırım yapan bir vakıf.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="projeler.html">Projeler</a></li>
+                        <li><a href="haberler.html">Haberler</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hizmetler</h4>
+                    <ul>
+                        <li><a href="#">Yurt Dışı Danışmanlık</a></li>
+                        <li><a href="#">Online Eğitimler</a></li>
+                        <li><a href="#">Araştırma Destekleri</a></li>
+                        <li><a href="#">Burs Programları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim</h4>
+                    <p>📍 Ankara, Türkiye</p>
+                    <p>📞 +90 (312) 000 00 00</p>
+                    <p>📧 info@targev.org.tr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TARGEV. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Load projects content
+        document.addEventListener('DOMContentLoaded', async function() {
+            await ContentManager.renderProjectsPage('projects-container');
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
                             </div>
                             <div class="project-meta-item">
                                 <span>Başlangıç</span>
@@ -282,15 +335,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Projelerimize Katkıda Bulunun</h2>
-            <p>Eğitim ve araştırma alanındaki çalışmalarımıza destek olmak için bizimle iletişime geçin.</p>
-            <a href="iletisim.html" class="btn btn-primary">İletişime Geçin</a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -330,9 +374,15 @@
         </div>
     </footer>
 
+    <script src="js/content.js"></script>
     <script>
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Load projects content
+        document.addEventListener('DOMContentLoaded', async function() {
+            await ContentManager.renderProjectsPage('projects-container');
         });
 
         // Filter functionality

@@ -1,1 +1,37 @@
-{"slides": []}
+{
+  "slides": [
+    {
+      "id": 1,
+      "tag": "📰 Protokol",
+      "title": "TARGEV ile Millî Eğitim Bakanlığı Arasında İş Birliği Protokolü",
+      "description": "Yurt dışında öğrenim görmek isteyen öğrencilere danışmanlık, rehberlik ve yerleştirme hizmetleri sunulmasına yönelik iş birliği protokolü imzalanmıştır.",
+      "date": "2025",
+      "category": "MEB İş Birliği",
+      "image": "https://www.targev.org/storage/posts/thumbnails/tCnuAEymnYRPnjWzZLIXJrc2ogSnUoYzCFKpwyXX.png",
+      "imageType": "single",
+      "link": "haberler.html"
+    },
+    {
+      "id": 2,
+      "tag": "🎓 Üniversite İş Birliği",
+      "title": "Üsküdar Üniversitesi ile Sosyal İnovasyon Model İş Birliği Anlaşması",
+      "description": "Gençlerin yeteneklerini keşfetmelerini, yaşam yolculuklarını anlamlı hale getirmelerini ve toplumsal katkı bilinciyle üretken bireyler olarak yetişmelerini hedefleyen mentorluk programları başlatıldı.",
+      "date": "31 Ekim 2025",
+      "category": "Sosyal İnovasyon",
+      "images": ["4.jpg", "1.jpg", "3.jpg", "2.jpg"],
+      "imageType": "grid",
+      "link": "haberler.html"
+    },
+    {
+      "id": 3,
+      "tag": "🤖 Teknoloji Projesi",
+      "title": "QTR Teknoloji A.Ş ile MOBİL YÜRÜME ROBOTU Projesi",
+      "description": "MOBİL YÜRÜME ROBOTU-MYR, yenilikçi bir yürüme rehabilitasyon robotudur. Hem sabit zeminde hem hareketli platformlarda hem de gerçek zemin koşullarında kullanılabilen mobil yapısıyla klinik içi ve dış ortamda etkin kullanım sağlar.",
+      "date": "2025",
+      "category": "Rehabilitasyon",
+      "video": "videoHero.mp4",
+      "imageType": "video",
+      "link": "projeler.html"
+    }
+  ]
+}

@@ -736,10 +736,10 @@
     </footer>
 
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     <script src="js/firebase-config.js"></script>
-    <script src="js/firebase-content.js"></script>
+    <script src="js/firebase-content.js"></script> -->
     <script src="js/content.js"></script>
     <script>
         // Mobile menu toggle
@@ -807,125 +807,16 @@
         }
 
         // ========================================
-        // Dynamic Content Loading from Firebase
-        // ========================================
-        async function loadDynamicSlider() {
-            try {
-                const slidesData = await FirebaseContent.getSlides();
-                if (!slidesData.length) return;
-
-                const container = document.getElementById('slider-v1');
-                const dotsContainer = document.getElementById('slider-nav-v1');
-                
-                let slidesHTML = '';
-                let dotsHTML = '';
-
-                slidesData.forEach((slide, index) => {
-                    const isActive = index === 0 ? 'active' : '';
-                    
-                    let visualHTML = '';
-                    if (slide.imageType === 'single') {
-                        visualHTML = `<div class="slide-icon"><img src="${slide.image}" alt="${slide.title}"></div>`;
-                    } else if (slide.imageType === 'grid' && slide.images) {
-                        visualHTML = `
-                            <div class="slide-collage">
-                                <div class="main-image"><img src="${slide.images[0]}" alt="${slide.title}"></div>
-                                ${slide.images.slice(1, 4).map(img => `<div class="side-image"><img src="${img}" alt="${slide.title}"></div>`).join('')}
-                            </div>`;
-                    } else if (slide.imageType === 'video' && slide.video) {
-                        visualHTML = `
-                            <div class="slide-video-container">
-                                <video autoplay muted loop playsinline>
-                                    <source src="${slide.video}" type="video/mp4">
-                                </video>
-                            </div>`;
-                    }
-
-                    slidesHTML += `
-                        <div class="slide slide-${index + 1} ${isActive}">
-                            <div class="slide-bg"></div>
-                            <div class="slide-overlay"></div>
-                            <div class="slide-content">
-                                <div class="slide-text">
-                                    <span class="slide-tag">${slide.tag}</span>
-                                    <h2>${slide.title}</h2>
-                                    <p>${slide.description}</p>
-                                    <div class="slide-meta">
-                                        <span>📅 ${slide.date}</span>
-                                        <span>🏷️ ${slide.category}</span>
-                                    </div>
-                                    <a href="${slide.link}" class="btn btn-primary">Detayları Gör</a>
-                                </div>
-                                <div class="slide-visual">${visualHTML}</div>
-                            </div>
-                        </div>`;
-
-                    dotsHTML += `<div class="slider-dot ${isActive}" data-slide="${index}"></div>`;
-                });
-
-                container.innerHTML = slidesHTML;
-                dotsContainer.innerHTML = dotsHTML;
-                initSlider();
-            } catch (error) {
-                console.log('Firebase slider yüklenemedi, JSON fallback kullanılıyor');
-                // Fallback to JSON if Firebase fails
-                initSlider();
-            }
-        }
-
-        async function loadDynamicNews() {
-            try {
-                const news = await FirebaseContent.getNews(3);
-                const container = document.getElementById('news-feed');
-                if (!container || !news.length) return;
-
-                container.innerHTML = news.map(item => `
-                    <div class="news-card">
-                        <div class="news-image">${item.image ? `<img src="${item.image}" alt="${item.title}">` : '📰'}</div>
-                        <div class="news-content">
-                            <span class="news-date">${item.date || ''}</span>
-                            <h3>${item.title}</h3>
-                            <p>${item.summary || ''}</p>
-                            <a href="haberler.html" class="news-link">Devamını Oku →</a>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (error) {
-                console.log('Firebase haberler yüklenemedi');
-                ContentManager.renderNews('news-feed', 3);
-            }
-        }
-
-        async function loadDynamicProjects() {
-            try {
-                const projects = await FirebaseContent.getProjects(3);
-                const container = document.getElementById('projects-feed');
-                if (!container || !projects.length) return;
-
-                container.innerHTML = projects.map(item => `
-                    <div class="project-card">
-                        <div class="project-image">${item.image ? `<img src="${item.image}" alt="${item.title}">` : '📚'}</div>
-                        <div class="project-content">
-                            <span class="project-tag">${item.category || ''}</span>
-                            <h3>${item.title}</h3>
-                            <p>${item.summary || ''}</p>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (error) {
-                console.log('Firebase projeler yüklenemedi');
-                ContentManager.renderProjects('projects-feed', 3);
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', async function() {
-            // Load content from Firebase
+            // Load content from JSON
             await Promise.all([
-                loadDynamicSlider(),
-                loadDynamicNews(),
-                loadDynamicProjects()
+                ContentManager.renderSlider('slider-v1'),
+                ContentManager.renderNews('news-feed', 3),
+                ContentManager.renderProjects('projects-feed', 3)
             ]);
         });
+    </script>
+    </script>
     </script>
 </body>
 </html>
