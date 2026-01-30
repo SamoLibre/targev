@@ -451,8 +451,12 @@
     <header>
         <div class="header-top">
             <div class="container">
-                <span>📧 info@targev.org.tr</span>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📷 Instagram</a>
+                    <a href="#" title="LinkedIn">💼 LinkedIn</a>
+                </div>
                 <div>
+                    <a href="#">📧 info@targev.org.tr</a>
                     <a href="#">📞 +90 (312) 000 00 00</a>
                 </div>
             </div>
@@ -580,24 +584,24 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-line"></div>
-                <h2>Hizmet Alanlarımız</h2>
+                <h2>Hizmetlerimiz</h2>
                 <p>Üç temel alanda faaliyet göstererek, bilgi ve eğitimin gücünü toplumun hizmetine sunuyoruz.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🎓</div>
                     <h3>Yurt Dışı Eğitim Danışmanlığı</h3>
-                    <p>Yurt dışında yükseköğrenim görmek isteyen öğrencilere kapsamlı rehberlik ve danışmanlık hizmetleri sunuyoruz. Londra başta olmak üzere dünyanın önde gelen üniversitelerine başvuru süreçlerinde yanınızdayız.</p>
+                    <p>Yurt dışında yükseköğrenim görmek isteyen öğrencilere kapsamlı rehberlik ve danışmanlık hizmetleri sunuyoruz.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💻</div>
                     <h3>Çevrim İçi Eğitim Programları</h3>
-                    <p>Uzman eğitmenlerle bilgi ve becerileri geliştirmeyi hedefleyen ücretsiz çevrim içi eğitim programları düzenliyoruz. Herkes için erişilebilir, kaliteli eğitim fırsatları sunuyoruz.</p>
+                    <p>Uzman eğitmenlerle bilgi ve becerileri geliştirmeyi hedefleyen çevrim içi eğitim programları düzenliyoruz.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔬</div>
                     <h3>Araştırma Ekosistemi</h3>
-                    <p>Sürdürülebilir kalkınmayı destekleyen, bilgiye dayalı bir araştırma ekosistemi inşa ediyoruz. Akademik çalışmalara destek veriyor, bilimsel projeleri destekliyoruz.</p>
+                    <p>Sürdürülebilir kalkınmayı destekleyen, bilgiye dayalı bir araştırma ekosistemi inşa ediyoruz.</p>
                 </div>
             </div>
         </div>
@@ -662,7 +666,6 @@
             </div>
             <div class="news-grid" id="news-feed">
                 <!-- Dynamic news will be loaded here -->
-                <div class="loading">Haberler yükleniyor...</div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="haberler.html" class="btn btn-outline">Tüm Haberler</a>
@@ -811,7 +814,7 @@
             // Load content from JSON
             await Promise.all([
                 ContentManager.renderSlider('slider-v1'),
-                ContentManager.renderNews('news-feed', 3),
+                ContentManager.renderNews('news-feed', 6),
                 ContentManager.renderProjects('projects-feed', 3)
             ]);
         });

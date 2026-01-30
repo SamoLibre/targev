@@ -14,7 +14,7 @@ const ContentManager = {
         if (this.cache[type]) return this.cache[type];
         
         try {
-            const response = await fetch(`/data/${type}.json?t=${Date.now()}`);
+            const response = await fetch(`./data/${type}.json?t=${Date.now()}`);
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             const data = await response.json();
             this.cache[type] = data[type];
