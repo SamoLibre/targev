@@ -5,7 +5,7 @@
 // https://cloudinary.com adresinden ücretsiz hesap oluşturun
 
 const cloudinaryConfig = {
-    cloudName: 'BURAYA_CLOUD_NAME',  // Cloudinary'den alın
+    cloudName: 'dyqkxbb70',  // Cloudinary'den alın
     uploadPreset: 'targev_unsigned'   // Aşağıda nasıl oluşturulacağı yazıyor
 };
 
@@ -70,3 +70,7 @@ class CloudinaryUploader {
 
 // Global instance
 const cloudinaryUploader = new CloudinaryUploader();
+
+// Global erişim için window'a ekle
+window.cloudinaryConfig = cloudinaryConfig;
+window.cloudinaryUploader = cloudinaryUploader;
