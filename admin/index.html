@@ -397,6 +397,8 @@
             errorDiv.classList.remove('show');
             
             try {
+                // Set persistence to LOCAL so session persists even after browser closes
+                await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
                 await auth.signInWithEmailAndPassword(email, password);
             } catch (error) {
                 let msg = 'Giriş başarısız!';
