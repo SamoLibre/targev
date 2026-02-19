@@ -72,7 +72,7 @@ header {
 .header-top {
     background-color: var(--primary-color);
     color: white;
-    padding: 8px 0;
+    padding: 10px 0;
     font-size: 0.875rem;
 }
 
@@ -80,30 +80,46 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
-.social-links a {
+.social-links a,
+.header-top .contact-info a {
     color: white;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.social-links a:hover {
+.social-links a svg,
+.header-top .contact-info a svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover,
+.header-top .contact-info a:hover {
     color: var(--accent-color);
 }
 
-.header-top a {
-    color: white;
-    margin-left: 20px;
+.social-links a:hover svg,
+.header-top .contact-info a:hover svg {
+    transform: scale(1.1);
 }
 
-.header-top a:hover {
-    color: var(--accent-color);
+.header-top .contact-info {
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
 nav {
@@ -378,14 +394,17 @@ section {
 }
 
 .about-image {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.1) 0%, rgba(44, 82, 130, 0.1) 100%);
     border-radius: 8px;
     height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-stats {
@@ -1147,6 +1166,29 @@ footer {
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
+    }
+
+    /* Header-top mobile improvements */
+    .header-top {
+        padding: 12px 0;
+    }
+
+    .header-top .container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .social-links,
+    .header-top .contact-info {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .header-top .contact-info a span,
+    .social-links a span {
+        font-size: 0.85rem;
     }
 
     .nav-menu {
